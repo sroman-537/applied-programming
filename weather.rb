@@ -1,7 +1,7 @@
 require "forecast_io"
 
 # configure the Dark Sky API with your API key
-ForecastIO.api_key = "239f601035cb7eab8da21e17f43d836f"
+ForecastIO.api_key = "0adf9455fa4ccdbcd3cd91b7814d2cbe"
 
 # do the heavy lifting, use Global Hub lat/long
 forecast = ForecastIO.forecast(42.0574063,-87.6722787).to_hash
