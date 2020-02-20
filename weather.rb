@@ -16,7 +16,7 @@ conditions = forecast ["currently"]["summary"]
 puts "In Evanston, it is currently #{current_temperature} and #{conditions}"
 
 for day in forecast ["daily"]["data"]
-puts "A high temperature of #{day["temperatureHigh"]} and #{day["summary"]}"
+puts "A high temperature off #{day["temperatureHigh"]} and #{day["summary"]}"
 end
 
 
