@@ -5,3 +5,5 @@ gem 'geocoder'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'puma'
+gem 'httparty'
+

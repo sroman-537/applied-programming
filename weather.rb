@@ -1,4 +1,5 @@
 require "forecast_io"
+require "httparty"
 
 # configure the Dark Sky API with your API key
 ForecastIO.api_key = "0adf9455fa4ccdbcd3cd91b7814d2cbe"
@@ -6,19 +7,16 @@ ForecastIO.api_key = "0adf9455fa4ccdbcd3cd91b7814d2cbe"
 # do the heavy lifting, use Global Hub lat/long
 forecast = ForecastIO.forecast(42.0574063,-87.6722787).to_hash
 
+url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=05420b4bdf204018b81ef80b92aa3e2a"
+news = HTTParty.get(url).parsed_response.to_hash
+# news is now a Hash you can pretty print (pp) and parse for your output
+
+
 # pp = pretty print
 # use instead of `puts` to make reading a hash a lot easier
 # e.g. `pp forecast`
 
-current_temperature = forecast ["currently"]["temperature"]
-conditions = forecast ["currently"]["summary"]
-
-puts "In Evanston, it is currently #{current_temperature} and #{conditions}"
-
-for day in forecast ["daily"]["data"]
-puts "A high temperature off #{day["temperatureHigh"]} and #{day["summary"]}"
-end
-
+pp news
 
 # Example output:
 #
